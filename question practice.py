@@ -175,6 +175,88 @@ def gcd(a, b):
     while b:
         a, b = b, a % b
     return a
-print(gcd(24, 36))  
+print(gcd(24, 36)) 
+
+# 14. Calculate the factorial of a number iteratively:
+
+def factorial_iterative(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+print(factorial_iterative(5)) 
+
+# 15. Find the sum of digits of a positive integer:
+
+def sum_of_digits(n):
+    total = 0
+    while n > 0:
+        total += n % 10
+        n //= 10
+    return total
+
+
+print(sum_of_digits(12345))  
+
+
+# 16. Merge two sorted lists into a single sorted list:
+
+def merge_sorted_lists(list1, list2):
+    merged_list = []
+    i = j = 0
+    while i < len(list1) and j < len(list2):
+        if list1[i] < list2[j]:
+            merged_list.append(list1[i])
+            i += 1
+        else:
+            merged_list.append(list2[j])
+            j += 1
+    merged_list.extend(list1[i:])
+    merged_list.extend(list2[j:])
+    return merged_list
+
+
+list1 = [1, 3, 5]
+list2 = [2, 4, 6]
+print(merge_sorted_lists(list1, list2))  
+
+
+# 17. Check if a given year is a leap year:
+
+def is_leap_year(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+
+print(is_leap_year(2020))  
+print(is_leap_year(2021))  
+
+
+# 18. Generate a random password of a given length:
+
+import random
+import string
+
+def random_password(length):
+    char = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(char) for _ in range(length))
+    return password
+
+lent=int(input("enter the no of length"))
+print(random_password(lent))  
+
+
+# 19. Find the median of a list of numbers:
+
+def find_median(nums):
+    sorted_nums = sorted(nums)
+    n = len(nums)
+    if n % 2 == 0:
+        return (sorted_nums[n//2 - 1] + sorted_nums[n//2]) / 2
+    else:
+        return sorted_nums[n//2]
+
+nums = [1, 2, 3, 4, 5]
+print(find_median(nums)) 
+
 
 
